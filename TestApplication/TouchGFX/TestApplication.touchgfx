@@ -34,7 +34,7 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "Interaction_Screen1",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_1"
@@ -47,7 +47,7 @@
             }
           },
           {
-            "InteractionName": "Interaction2",
+            "InteractionName": "Interaction_Screen2",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_2"
@@ -112,7 +112,7 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "Interaction_Home",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_home"
@@ -191,7 +191,7 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "Interaction_Home",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_home"
