@@ -123,6 +123,17 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "Home"
             }
+          },
+          {
+            "InteractionName": "Interaction_Toggle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "function_toggle_pressed"
+            }
           }
         ]
       },
