@@ -2,8 +2,36 @@
   "Application": {
     "Screens": [
       {
-        "Name": "Screen1",
-        "Components": [],
+        "Name": "Home",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_240x320_poly.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "button_1",
+            "X": 53,
+            "Y": 135,
+            "Width": 50,
+            "Height": 50,
+            "Pressed": "__generated\\icon_theme_images_action_lightbulb_50_50_FFFF00.svg.png",
+            "Released": "__generated\\icon_theme_images_action_lightbulb_50_50_000000.svg.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "button_2",
+            "X": 139,
+            "Y": 135,
+            "Width": 50,
+            "Height": 50,
+            "Pressed": "__generated\\icon_theme_images_action_accessibility_new_50_50_FFFF00.svg.png",
+            "Released": "__generated\\icon_theme_images_action_accessibility_new_50_50_000000.svg.png"
+          }
+        ],
         "Interactions": []
       }
     ],
@@ -14,7 +42,7 @@
       "Height": 320
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Screen1",
+    "StartupScreenName": "Home",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
