@@ -32,7 +32,178 @@
             "Released": "__generated\\icon_theme_images_action_accessibility_new_50_50_000000.svg.png"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_2"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen1",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_240x320_poly.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "button_home",
+            "Width": 50,
+            "Height": 50,
+            "Pressed": "__generated\\icon_theme_images_action_home_50_50_FFFF00.svg.png",
+            "Released": "__generated\\icon_theme_images_action_home_50_50_000000.svg.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton1",
+            "X": 51,
+            "Y": 237,
+            "Width": 138,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_text_on_active.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_round_text_off_normal.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\round_active_text.json"
+          },
+          {
+            "Type": "Image",
+            "Name": "imageBulbOff",
+            "X": 70,
+            "Y": 77,
+            "Width": 100,
+            "Height": 100,
+            "RelativeFilename": "__generated\\icon_theme_images_action_lightbulb_100_100_000000.svg.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "imageBulbOn",
+            "X": 70,
+            "Y": 77,
+            "Width": 100,
+            "Height": 100,
+            "Visible": false,
+            "RelativeFilename": "__generated\\icon_theme_images_action_lightbulb_100_100_FFFF00.svg.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_home"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Home"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_240x320_poly.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "button_home",
+            "Width": 50,
+            "Height": 50,
+            "Pressed": "__generated\\icon_theme_images_action_home_50_50_FFFF00.svg.png",
+            "Released": "__generated\\icon_theme_images_action_home_50_50_000000.svg.png"
+          },
+          {
+            "Type": "Slider",
+            "Name": "slider1",
+            "X": 4,
+            "Y": 269,
+            "Width": 232,
+            "Height": 32,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_small.png",
+            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_small.png",
+            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_light.png",
+            "BackgroundX": 16,
+            "BackgroundY": 11,
+            "IndicatorMax": 200,
+            "ValueMax": 100,
+            "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\small_rounded.json"
+          },
+          {
+            "Type": "Gauge",
+            "Name": "gauge1",
+            "X": 28,
+            "Y": 59,
+            "Width": 184,
+            "Height": 184,
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_small_backgrounds_light_precision.png",
+            "RotationCenterX": 92.0,
+            "RotationCenterY": 92.0,
+            "StartAngle": -120.0,
+            "EndAngle": 120.0,
+            "RangeMax": 100.0,
+            "Easing": "Linear",
+            "EasingOption": "In",
+            "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_small_needles_rough.png",
+            "NeedleRotationCenterX": 8.0,
+            "NeedleRotationCenterY": 53.0,
+            "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
+            "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
+            "ArcColor": {
+              "Red": 20,
+              "Green": 151,
+              "Blue": 197
+            },
+            "ArcCapStyle": "Butt"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_home"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Home"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [],
