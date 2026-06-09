@@ -6,6 +6,16 @@ cmake_minimum_required(VERSION 3.22)
 #
 # User is free to modify the file as much as necessary
 #
+file(GLOB_RECURSE TOUCHGFX_SOURCES
+    ${CMAKE_SOURCE_DIR}/TouchGFX/gui/src/*.cpp
+    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/gui_generated/src/*.cpp
+    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/fonts/src/*.cpp
+    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/images/src/*.cpp
+    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/texts/src/*.cpp
+
+    #${CMAKE_SOURCE_DIR}/Middlewares/ST/touchgfx/framework/source/*.cpp
+)
+
 
 # Setup compiler settings
 set(CMAKE_C_STANDARD 11)
@@ -47,11 +57,24 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    ${TOUCHGFX_SOURCES}
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+    ${CMAKE_SOURCE_DIR}/Middlewares/ST/touchgfx/framework/include
+
+    ${CMAKE_SOURCE_DIR}/TouchGFX/generated
+    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/texts/include
+    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/fonts/include
+    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/images/include
+    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/gui_generated/include
+
+    ${CMAKE_SOURCE_DIR}/TouchGFX/gui/include
+    ${CMAKE_SOURCE_DIR}/TouchGFX/App
+    ${CMAKE_SOURCE_DIR}/TouchGFX/target
+    ${CMAKE_SOURCE_DIR}/TouchGFX/target/generated
 )
 
 # Add project symbols (macros)
@@ -67,4 +90,5 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
 
     # Add user defined libraries
+    ${CMAKE_SOURCE_DIR}/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc/libtouchgfx.a
 )
