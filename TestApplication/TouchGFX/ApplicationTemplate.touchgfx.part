@@ -18,7 +18,7 @@
     "Family": "STM32F4",
     "SubFamily": "STM32F429/439",
     "Platform": "m4",
-    "Toolchain": "STM32CubeIDE",
+    "Toolchain": "CMake",
     "ProjectFile": "../STM32F429I_DISCO_REV_D01.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": [
@@ -28,5 +28,5 @@
       "VectorFonts"
     ]
   },
-  "Version": "4.26.0"
+  "Version": "4.26.1"
 }
