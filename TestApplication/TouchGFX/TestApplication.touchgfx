@@ -335,7 +335,8 @@
           {
             "InteractionName": "Interaction_Slider",
             "Trigger": {
-              "Type": "TriggerNone"
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider1"
             },
             "Action": {
               "Type": "ActionCustom",
