@@ -7,7 +7,9 @@ TouchGFX/*_backup.touchgfx
 TouchGFX/build/
 TouchGFX/config/
 TouchGFX/generated/
-TouchGFX/simulator/
+TouchGFX/simulator/gcc/
+TouchGFX/simulator/msvs/
+TouchGFX/simulator/main.cpp
 TouchGFX/target.config
 Middlewares/ST/touchgfx/
 Middlewares/ST/touchgfx_components/
