@@ -26,6 +26,7 @@ public:
     virtual void deactivate();
 
     virtual ~Screen1Presenter() {}
+    virtual void function_toggle_pressed(); // virtual function to handle toggle button press event
 
 private:
     Screen1Presenter();
