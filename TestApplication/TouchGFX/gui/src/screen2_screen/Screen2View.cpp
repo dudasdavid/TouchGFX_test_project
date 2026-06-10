@@ -1,5 +1,10 @@
 #include <gui/screen2_screen/Screen2View.hpp>
 
+extern "C"
+{
+    extern uint8_t slider_value; // Declare the variable to hold the value of the slider
+}
+
 Screen2View::Screen2View()
 {
 
@@ -8,6 +13,9 @@ Screen2View::Screen2View()
 void Screen2View::setupScreen()
 {
     Screen2ViewBase::setupScreen();
+
+    slider1.setValue(slider_value);
+    slider1.invalidate();
 }
 
 void Screen2View::tearDownScreen()
