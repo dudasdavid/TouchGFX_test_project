@@ -99,6 +99,7 @@ const osThreadAttr_t testTask_attributes = {
 };
 /* USER CODE BEGIN PV */
 uint8_t isRevD = 0; /* Applicable only for STM32F429I DISCOVERY REVD and above */
+uint8_t bulb_image_state = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -711,6 +712,14 @@ void toggle_led_touch_button(void)
 {
   HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
   HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_14);
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == GPIO_PIN_0) // Check if the interrupt is from the correct pin
+  {
+    bulb_image_state = !bulb_image_state; // Toggle the state variable
+  }
 }
 
 /**
