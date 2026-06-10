@@ -17,11 +17,11 @@ void Screen1Presenter::deactivate()
 
 }
 
-void Screen1Presenter::function_toggle_pressed()
+void Screen1Presenter::function_toggle_pressed(bool state)
 {
     // This function is called when the function toggle button is pressed.
     // You can add your custom code here to handle the button press event.
-    model->function_toggle_pressed(); // Call the model function to handle the button press event
+    model->function_toggle_pressed(state); // Call the model function to handle the button press event
 }
 
 void Screen1Presenter::updateBulbImage(bool state)

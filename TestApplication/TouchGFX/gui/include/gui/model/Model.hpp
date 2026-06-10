@@ -14,7 +14,7 @@ public:
     }
 
     void tick();
-    void function_toggle_pressed(); // function to handle toggle button press event
+    void function_toggle_pressed(bool state); // function to handle toggle button press event
     void slider_value_changed(int value); // function to handle slider value change event
     
 protected:

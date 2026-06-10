@@ -104,6 +104,7 @@ uint8_t isRevD = 0; /* Applicable only for STM32F429I DISCOVERY REVD and above *
 uint8_t bulb_image_state = 0;
 uint8_t slider_value = 0;
 float gauge_value = 0.0f;
+bool toggle_button_state = false;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -150,7 +151,7 @@ void                      IOE_Write(uint8_t Addr, uint8_t Reg, uint8_t Value);
 uint8_t                   IOE_Read(uint8_t Addr, uint8_t Reg);
 uint16_t                  IOE_ReadMultiple(uint8_t Addr, uint8_t Reg, uint8_t *pBuffer, uint16_t Length);
 
-void toggle_led_touch_button(void);
+void toggle_led_touch_button(bool state);
 
 /* USER CODE END PFP */
 
@@ -712,10 +713,11 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void toggle_led_touch_button(void)
+void toggle_led_touch_button(bool state)
 {
   HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
   HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_14);
+  toggle_button_state = state;
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
