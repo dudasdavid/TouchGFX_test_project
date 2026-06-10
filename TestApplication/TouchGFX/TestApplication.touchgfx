@@ -381,6 +381,7 @@
       }
     },
     "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "GenerateAssetsCommandOverride": "make -f simulator/gcc/Makefile assets -j1",
     "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
     "PostGenerateTargetCommand": "touchgfx update_project",
     "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
