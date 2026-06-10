@@ -1079,10 +1079,13 @@ void StartDefaultTask(void *argument)
 void StartTestTask(void *argument)
 {
   /* USER CODE BEGIN StartTestTask */
+  uint8_t counter = 0;
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    counter++;
+    printf("Test task is running... Counter: %d\n", counter);
+    osDelay(1000);
   }
   /* USER CODE END StartTestTask */
 }
