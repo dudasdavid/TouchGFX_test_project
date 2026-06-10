@@ -23,3 +23,10 @@ void Screen2Presenter::slider_value_changed(int value)
     // You can add your custom code here to handle the slider value change event.
     model->slider_value_changed(value); // Call the model function to handle the slider value change event
 }
+
+void Screen2Presenter::updateGaugeValue(float value)
+{
+    // This function is called to update the gauge value.
+    // You can add your custom code here to update the gauge based on the value variable.
+    view.updateGaugeValue(value); // Call the view function to update the gauge value
+}

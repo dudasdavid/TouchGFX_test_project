@@ -22,3 +22,11 @@ void Screen2View::function_slider_changed(int value)
 
     // use value here
 }
+
+void Screen2View::updateGaugeValue(float value)
+{
+    // This function is called to update the gauge value.
+    // You can add your custom code here to update the gauge based on the value variable.
+    gauge1.setValue(value); // Update the gauge value
+    gauge1.invalidate(); // Invalidate the gauge to trigger a redraw
+}

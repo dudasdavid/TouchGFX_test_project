@@ -103,6 +103,7 @@ const osThreadAttr_t testTask_attributes = {
 uint8_t isRevD = 0; /* Applicable only for STM32F429I DISCOVERY REVD and above */
 uint8_t bulb_image_state = 0;
 uint8_t slider_value = 0;
+float gauge_value = 0.0f;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -1086,7 +1087,8 @@ void StartTestTask(void *argument)
   {
     counter++;
     printf("Test task is running... Slider: %d\n", slider_value);
-    osDelay(1000);
+    gauge_value = slider_value * 1.2;
+    osDelay(100);
   }
   /* USER CODE END StartTestTask */
 }

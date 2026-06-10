@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void function_slider_changed(int value);
+    void updateGaugeValue(float value); // function to update the gauge value
 protected:
 };
 

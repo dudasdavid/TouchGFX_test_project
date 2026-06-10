@@ -16,6 +16,7 @@ public:
     }
 
     virtual void updateBulbImage(bool state) {} // virtual function to update the bulb image state
+    virtual void updateGaugeValue(float value) {} // virtual function to update the gauge value
 protected:
     Model* model;
 };
