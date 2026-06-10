@@ -250,6 +250,70 @@
                     "ProgressInitialValue": 60
                   }
                 ]
+              },
+              {
+                "Type": "Container",
+                "Name": "swipeContainer1Page4",
+                "Width": 240,
+                "Height": 270,
+                "Components": [
+                  {
+                    "Type": "DynamicGraph",
+                    "Name": "dynamicGraph1",
+                    "Width": 240,
+                    "Height": 237,
+                    "DataSeed": 1531960772,
+                    "NumberOfValues": 100,
+                    "MaxY": 100.0,
+                    "Precision": "1",
+                    "LastIndex": 99,
+                    "XAxisScale": 1.0,
+                    "InsertRandomValues": true,
+                    "LabelSizeTop": 6,
+                    "LabelSizeBottom": 13,
+                    "LabelSizeLeft": 18,
+                    "PaddingBottom": 2,
+                    "PaddingLeft": 4,
+                    "GraphType": "GraphScroll",
+                    "GraphDrawers": [
+                      {
+                        "Type": "LineDrawer",
+                        "LineWidth": 2,
+                        "FileNameImage": "",
+                        "Color": {
+                          "Green": 255,
+                          "Blue": 8
+                        }
+                      }
+                    ],
+                    "XAxisGrid": {
+                      "Type": "GraphGrid",
+                      "Interval": 10.0,
+                      "LineWidth": 1
+                    },
+                    "YAxisGrid": {
+                      "Type": "GraphGrid",
+                      "Interval": 10.0,
+                      "LineWidth": 1
+                    },
+                    "XAxisLabel": {
+                      "Type": "GraphLabel",
+                      "Interval": 10.0,
+                      "DecimalSeparator": "Point",
+                      "TextId": "__SingleUse_H8IT",
+                      "TextRotation": "0",
+                      "Position": "Bottom"
+                    },
+                    "YAxisLabel": {
+                      "Type": "GraphLabel",
+                      "Interval": 10.0,
+                      "DecimalSeparator": "Point",
+                      "TextId": "__SingleUse_QKTE",
+                      "TextRotation": "0",
+                      "Position": "Left"
+                    }
+                  }
+                ]
               }
             ]
           }
@@ -271,8 +335,7 @@
           {
             "InteractionName": "Interaction_Slider",
             "Trigger": {
-              "Type": "TriggerSliderValueChanged",
-              "TriggerComponent": "slider1"
+              "Type": "TriggerNone"
             },
             "Action": {
               "Type": "ActionCustom",
