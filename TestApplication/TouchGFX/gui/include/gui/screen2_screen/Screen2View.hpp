@@ -11,7 +11,7 @@ public:
     virtual ~Screen2View() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    virtual void function_slider_changed(int value);
+    virtual void function_slider_changed(int value) override; // override virtual function from Screen2ViewBase
     void updateGaugeValue(float value); // function to update the gauge value
 protected:
 };
