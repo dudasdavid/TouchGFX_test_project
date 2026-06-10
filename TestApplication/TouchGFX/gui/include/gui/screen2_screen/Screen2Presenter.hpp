@@ -27,6 +27,8 @@ public:
 
     virtual ~Screen2Presenter() {}
 
+    virtual void slider_value_changed(int value); // override virtual function to handle slider value change event
+
 private:
     Screen2Presenter();
 

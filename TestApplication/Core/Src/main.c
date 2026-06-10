@@ -102,6 +102,7 @@ const osThreadAttr_t testTask_attributes = {
 /* USER CODE BEGIN PV */
 uint8_t isRevD = 0; /* Applicable only for STM32F429I DISCOVERY REVD and above */
 uint8_t bulb_image_state = 0;
+uint8_t slider_value = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -1084,7 +1085,7 @@ void StartTestTask(void *argument)
   for(;;)
   {
     counter++;
-    printf("Test task is running... Counter: %d\n", counter);
+    printf("Test task is running... Slider: %d\n", slider_value);
     osDelay(1000);
   }
   /* USER CODE END StartTestTask */
