@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void function_toggle_pressed() override; // override virtual function from Screen1ViewBase
+    void updateBulbImage(bool state); // function to update the bulb image state
 protected:
 };
 
