@@ -15,7 +15,7 @@ public:
         model = m;
     }
 
-    virtual void updateBulbImage(bool state); // virtual function to update the bulb image state
+    virtual void updateBulbImage(bool state) {} // virtual function to update the bulb image state
 protected:
     Model* model;
 };
