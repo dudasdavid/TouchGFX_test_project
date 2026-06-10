@@ -6,16 +6,6 @@ cmake_minimum_required(VERSION 3.22)
 #
 # User is free to modify the file as much as necessary
 #
-file(GLOB_RECURSE TOUCHGFX_SOURCES
-    ${CMAKE_SOURCE_DIR}/TouchGFX/gui/src/*.cpp
-    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/gui_generated/src/*.cpp
-    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/fonts/src/*.cpp
-    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/images/src/*.cpp
-    ${CMAKE_SOURCE_DIR}/TouchGFX/generated/texts/src/*.cpp
-
-    #${CMAKE_SOURCE_DIR}/Middlewares/ST/touchgfx/framework/source/*.cpp
-)
-
 
 # Setup compiler settings
 set(CMAKE_C_STANDARD 11)
@@ -60,7 +50,6 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-    ${TOUCHGFX_SOURCES}
 )
 
 # Add include paths
