@@ -14,6 +14,7 @@ public:
     }
 
     void tick();
+    void function_toggle_pressed(); // function to handle toggle button press event
 protected:
     ModelListener* modelListener;
 };
