@@ -139,6 +139,7 @@
       },
       {
         "Name": "Screen2",
+        "CanvasBufferSize": 3600,
         "Components": [
           {
             "Type": "Image",
@@ -156,48 +157,101 @@
             "Released": "__generated\\icon_theme_images_action_home_50_50_000000.svg.png"
           },
           {
-            "Type": "Slider",
-            "Name": "slider1",
-            "X": 4,
-            "Y": 269,
-            "Width": 232,
-            "Height": 32,
-            "IsHorizontalSlider": true,
-            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_small.png",
-            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_small.png",
-            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_light.png",
-            "BackgroundX": 16,
-            "BackgroundY": 11,
-            "IndicatorMax": 200,
-            "ValueMax": 100,
-            "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\small_rounded.json"
-          },
-          {
-            "Type": "Gauge",
-            "Name": "gauge1",
-            "X": 28,
-            "Y": 59,
-            "Width": 184,
-            "Height": 184,
-            "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_small_backgrounds_light_precision.png",
-            "RotationCenterX": 92.0,
-            "RotationCenterY": 92.0,
-            "StartAngle": -120.0,
-            "EndAngle": 120.0,
-            "RangeMax": 100.0,
-            "Easing": "Linear",
-            "EasingOption": "In",
-            "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_small_needles_rough.png",
-            "NeedleRotationCenterX": 8.0,
-            "NeedleRotationCenterY": 53.0,
-            "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
-            "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
-            "ArcColor": {
-              "Red": 20,
-              "Green": 151,
-              "Blue": 197
-            },
-            "ArcCapStyle": "Butt"
+            "Type": "SwipeContainer",
+            "Name": "swipeContainer1",
+            "Y": 50,
+            "Width": 240,
+            "Height": 270,
+            "SwipeCutoff": 50,
+            "IndicatorImageNormal": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_off_normal.png",
+            "IndicatorImageHighlight": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_on_active.png",
+            "EndSwipeElasticWidth": 50,
+            "SelectedPage": "swipeContainer1Page2",
+            "Preset": "alternate_theme\\presets\\swipecontainer\\medium_active.json",
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "swipeContainer1Page2",
+                "Width": 240,
+                "Height": 270,
+                "Components": [
+                  {
+                    "Type": "Slider",
+                    "Name": "slider1",
+                    "X": 4,
+                    "Y": 221,
+                    "Width": 232,
+                    "Height": 32,
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_small.png",
+                    "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_small.png",
+                    "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_light.png",
+                    "BackgroundX": 16,
+                    "BackgroundY": 11,
+                    "IndicatorMax": 200,
+                    "ValueMax": 100,
+                    "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\small_rounded.json"
+                  },
+                  {
+                    "Type": "Gauge",
+                    "Name": "gauge1",
+                    "X": 28,
+                    "Y": 1,
+                    "Width": 184,
+                    "Height": 184,
+                    "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_small_backgrounds_light_precision.png",
+                    "RotationCenterX": 92.0,
+                    "RotationCenterY": 92.0,
+                    "StartAngle": -120.0,
+                    "EndAngle": 120.0,
+                    "RangeMax": 100.0,
+                    "Easing": "Linear",
+                    "EasingOption": "In",
+                    "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_small_needles_rough.png",
+                    "NeedleRotationCenterX": 8.0,
+                    "NeedleRotationCenterY": 53.0,
+                    "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
+                    "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
+                    "ArcColor": {
+                      "Red": 20,
+                      "Green": 151,
+                      "Blue": 197
+                    },
+                    "ArcCapStyle": "Butt"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "swipeContainer1Page3",
+                "Width": 240,
+                "Height": 270,
+                "Components": [
+                  {
+                    "Type": "CircleProgress",
+                    "Name": "circleProgress1",
+                    "X": 45,
+                    "Y": 35,
+                    "Width": 150,
+                    "Height": 150,
+                    "Color": {
+                      "Green": 240,
+                      "Blue": 255
+                    },
+                    "CenterX": 75.0,
+                    "CenterY": 75.0,
+                    "Radius": 65.0,
+                    "LineWidth": 20.0,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Butt",
+                    "Preset": "alternate_theme\\presets\\circleprogress\\active_medium.json",
+                    "FileNameBackground": "__generated\\alternate_theme_images_widgets_circleprogress_backgrounds_medium.png",
+                    "ProgressRangeMax": 100,
+                    "ProgressInitialValue": 60
+                  }
+                ]
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -212,6 +266,17 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
               "ActionComponent": "Home"
+            }
+          },
+          {
+            "InteractionName": "Interaction_Slider",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "function_slider_changed"
             }
           }
         ]
@@ -265,7 +330,7 @@
     "DisplayOrientation": "Portrait",
     "Family": "STM32F4",
     "SubFamily": "STM32F429/439",
-    "Toolchain": "STM32CubeIDE",
+    "Toolchain": "CMake",
     "Platform": "m4",
     "ProjectFile": "../STM32F429I_DISCO_REV_D01.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
