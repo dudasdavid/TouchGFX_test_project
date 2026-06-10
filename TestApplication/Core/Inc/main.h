@@ -68,6 +68,8 @@ void Error_Handler(void);
 #define MCU_ACTIVE_GPIO_Port GPIOE
 #define SPI5_NCS_Pin GPIO_PIN_1
 #define SPI5_NCS_GPIO_Port GPIOC
+#define OTG_FS_PSO_Pin GPIO_PIN_4
+#define OTG_FS_PSO_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 
