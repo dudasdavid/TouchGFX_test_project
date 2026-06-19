@@ -11,6 +11,10 @@ extern "C"
     extern float measured_value; // Declare the variable to hold the value of the graph
     extern float measured_average_1s; // Declare the variable to hold the average value of the graph over 1 second
     extern uint32_t measured_average_sequence; // Declare the variable to hold the sequence number of the measured average
+
+#ifdef SIMULATOR
+    void simulator_fake_backend_tick(void);
+#endif
 }
 
 Model::Model() : modelListener(0)
@@ -20,6 +24,11 @@ Model::Model() : modelListener(0)
 
 void Model::tick()
 {
+
+#ifdef SIMULATOR
+    simulator_fake_backend_tick();
+#endif
+
     if (bulb_image_state)
     {
         modelListener->updateBulbImage(true); // Update the bulb image to ON state
