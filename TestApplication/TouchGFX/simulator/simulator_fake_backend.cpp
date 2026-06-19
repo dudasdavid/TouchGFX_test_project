@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <cmath>
 #include <chrono>
+#include <cstdio>
 
 extern "C"
 {
@@ -40,7 +41,8 @@ extern "C" void simulator_fake_backend_tick(void)
 {
     using Clock = std::chrono::steady_clock;
 
-    static Clock::time_point previousSampleTime = Clock::now();
+    static Clock::time_point previousMeasurementTime = Clock::now();
+    static Clock::time_point previousGaugeTime = Clock::now();
 
     static float measurementSum = 0.0f;
     static uint8_t measurementCount = 0U;
@@ -49,35 +51,30 @@ extern "C" void simulator_fake_backend_tick(void)
     constexpr float noiseAmplitude = 0.1f;
     constexpr float phaseIncrement = 0.01f;
 
-    const std::chrono::milliseconds samplePeriod(50);
     const Clock::time_point currentTime = Clock::now();
 
     /*
-     * Use while instead of if so the simulator can catch up if one frame
-     * takes longer than 50 ms.
+     * Fake measurement task: every 50 ms
      */
-    while ((currentTime - previousSampleTime) >= samplePeriod)
+    while ((currentTime - previousMeasurementTime) >=
+           std::chrono::milliseconds(50))
     {
-        previousSampleTime += samplePeriod;
+        previousMeasurementTime += std::chrono::milliseconds(50);
 
         const float measurementInput =
             phase + random_noise(noiseAmplitude);
 
         measured_value =
-            static_cast<float>(std::sin(measurementInput)) * 10.0f;
+            std::sin(measurementInput) * 10.0f;
 
-        /*
-         * Average the actual measured values, rather than averaging the
-         * sine input and applying sin() afterward.
-         */
         measurementSum += measured_value;
         measurementCount++;
 
-        // 20 samples × 50 ms = 1 second
         if (measurementCount >= 20U)
         {
             measured_average_1s =
-                measurementSum / static_cast<float>(measurementCount);
+                measurementSum /
+                static_cast<float>(measurementCount);
 
             measurementSum = 0.0f;
             measurementCount = 0U;
@@ -86,5 +83,23 @@ extern "C" void simulator_fake_backend_tick(void)
 
             measured_average_sequence++;
         }
+    }
+
+    /*
+     * Fake StartTestTask: every 100 ms
+     */
+    while ((currentTime - previousGaugeTime) >=
+           std::chrono::milliseconds(100))
+    {
+        previousGaugeTime += std::chrono::milliseconds(100);
+
+        gauge_value =
+            static_cast<float>(slider_value) * 1.2f;
+
+        std::printf(
+            "Test task is running... Slider: %u, Gauge: %.1f\n",
+            static_cast<unsigned int>(slider_value),
+            static_cast<double>(gauge_value)
+        );
     }
 }
