@@ -262,11 +262,11 @@
                     "Name": "dynamicGraph1",
                     "Width": 240,
                     "Height": 237,
-                    "DataSeed": 1531960772,
-                    "NumberOfValues": 100,
+                    "DataSeed": -657163775,
+                    "NumberOfValues": 50,
                     "MaxY": 100.0,
                     "Precision": "1",
-                    "LastIndex": 99,
+                    "LastIndex": 49,
                     "XAxisScale": 1.0,
                     "InsertRandomValues": true,
                     "LabelSizeTop": 6,
@@ -312,6 +312,34 @@
                       "TextRotation": "0",
                       "Position": "Left"
                     }
+                  },
+                  {
+                    "Type": "DynamicGraph",
+                    "Name": "dynamicGraph2",
+                    "X": 22,
+                    "Y": 7,
+                    "Width": 218,
+                    "Height": 214,
+                    "DataSeed": 341746238,
+                    "NumberOfValues": 50,
+                    "MaxY": 100.0,
+                    "Precision": "1",
+                    "LastIndex": 49,
+                    "XAxisScale": 1.0,
+                    "InsertRandomValues": true,
+                    "GraphType": "GraphWrapClear",
+                    "GraphDrawers": [
+                      {
+                        "Type": "LineDrawer",
+                        "LineWidth": 2,
+                        "FileNameImage": "",
+                        "Color": {
+                          "Red": 20,
+                          "Green": 151,
+                          "Blue": 197
+                        }
+                      }
+                    ]
                   }
                 ]
               }

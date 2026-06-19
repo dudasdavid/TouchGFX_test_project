@@ -105,7 +105,9 @@ uint8_t bulb_image_state = 0;
 uint8_t slider_value = 0;
 float gauge_value = 0.0f;
 bool toggle_button_state = false;
-uint16_t measured_value = 0;
+float measured_value = 0;
+float measured_average_1s = 0;
+uint32_t measured_average_sequence = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -1066,11 +1068,29 @@ void StartDefaultTask(void *argument)
   /* init code for USB_HOST */
   MX_USB_HOST_Init();
   /* USER CODE BEGIN 5 */
+  static float measurement_sum = 0;
+  static uint8_t measurement_count = 0;
   /* Infinite loop */
   for(;;)
   {
-    measured_value++;
-    osDelay(1000);
+    measured_value+=0.1;
+    measurement_sum += measured_value;
+    measurement_count++;
+
+    // 20 samples × 50 ms = 1 second
+    if (measurement_count >= 20)
+    {
+        // Rounded integer average
+        measured_average_1s = measurement_sum / measurement_count;
+
+        measurement_sum = 0;
+        measurement_count = 0;
+
+        // Tells TouchGFX that a new average is available
+        measured_average_sequence++;
+    }
+
+    osDelay(50);
   }
   /* USER CODE END 5 */
 }

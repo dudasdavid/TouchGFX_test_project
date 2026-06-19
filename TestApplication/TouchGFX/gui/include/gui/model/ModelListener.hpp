@@ -17,9 +17,11 @@ public:
         model = m;
     }
 
+    uint32_t lastGraphSequence;
+
     virtual void updateBulbImage(bool state) {} // virtual function to update the bulb image state
     virtual void updateGaugeValue(float value) {} // virtual function to update the gauge value
-    virtual void updateGraphValue(uint16_t value) {} // virtual function to update the graph value
+    virtual void updateGraphValue(float value1, float value2) {} // virtual function to update the graph value
 protected:
     Model* model;
 };
