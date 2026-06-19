@@ -65,7 +65,7 @@ void Screen2View::updateGraphValue(float value1, float value2)
 
 void Screen2View::updateSharedGraphRange()
 {
-    constexpr int Y_MARGIN = 10;
+    constexpr int Y_MARGIN = 1;
 
     // Temporarily calculate the required range for each dataset
     dynamicGraph1.setGraphRangeYAuto(false, Y_MARGIN);

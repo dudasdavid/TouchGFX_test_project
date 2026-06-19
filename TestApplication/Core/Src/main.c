@@ -27,6 +27,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Components/ili9341/ili9341.h"
+#include <math.h>
+#include <stdint.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -108,6 +110,7 @@ bool toggle_button_state = false;
 float measured_value = 0;
 float measured_average_1s = 0;
 uint32_t measured_average_sequence = 0;
+static uint32_t noise_seed = 123456789U;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -1054,6 +1057,17 @@ void LCD_Delay(uint32_t Delay)
   HAL_Delay(Delay);
 }
 
+static float random_noise(float amplitude)
+{
+    noise_seed = noise_seed * 1664525U + 1013904223U;
+
+    // Convert to approximately 0.0 ... 1.0
+    float normalized = (float)(noise_seed & 0xFFFFU) / 65535.0f;
+
+    // Convert to -amplitude ... +amplitude
+    return (normalized * 2.0f - 1.0f) * amplitude;
+}
+
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
@@ -1070,18 +1084,27 @@ void StartDefaultTask(void *argument)
   /* USER CODE BEGIN 5 */
   static float measurement_sum = 0;
   static uint8_t measurement_count = 0;
+  static float phase = 0.0f;
+  static float measurement_input = 0.0f;
+
+  const float noise_amplitude = 0.1f;
+  const float phase_increment = 0.01f;
   /* Infinite loop */
   for(;;)
   {
-    measured_value+=0.1;
-    measurement_sum += measured_value;
+
+    measurement_input = phase + random_noise(noise_amplitude);
+    measured_value = sinf(measurement_input) * 10;
+    measurement_sum += measurement_input;
     measurement_count++;
 
     // 20 samples × 50 ms = 1 second
     if (measurement_count >= 20)
     {
+        phase += phase_increment;
+
         // Rounded integer average
-        measured_average_1s = measurement_sum / measurement_count;
+        measured_average_1s = sinf(measurement_sum / measurement_count) * 10;
 
         measurement_sum = 0;
         measurement_count = 0;

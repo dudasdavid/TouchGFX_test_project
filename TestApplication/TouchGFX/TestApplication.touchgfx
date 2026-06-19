@@ -265,7 +265,7 @@
                     "DataSeed": -657163775,
                     "NumberOfValues": 50,
                     "MaxY": 100.0,
-                    "Precision": "1",
+                    "Precision": "0.01",
                     "LastIndex": 49,
                     "XAxisScale": 1.0,
                     "InsertRandomValues": true,
@@ -323,20 +323,20 @@
                     "DataSeed": 341746238,
                     "NumberOfValues": 50,
                     "MaxY": 100.0,
-                    "Precision": "1",
+                    "Precision": "0.01",
                     "LastIndex": 49,
                     "XAxisScale": 1.0,
                     "InsertRandomValues": true,
-                    "GraphType": "GraphWrapClear",
+                    "GraphType": "GraphScroll",
                     "GraphDrawers": [
                       {
                         "Type": "LineDrawer",
                         "LineWidth": 2,
                         "FileNameImage": "",
                         "Color": {
-                          "Red": 20,
-                          "Green": 151,
-                          "Blue": 197
+                          "Red": 240,
+                          "Green": 7,
+                          "Blue": 7
                         }
                       }
                     ]
