@@ -19,11 +19,28 @@ void Screen2View::setupScreen()
     slider1.invalidate();
 
     clearGraphs();
+
+    progressValue = 0;
+    circleProgress1.setValue(progressValue);
+    circleProgress1.invalidate();
 }
 
 void Screen2View::tearDownScreen()
 {
     Screen2ViewBase::tearDownScreen();
+}
+
+void Screen2View::handleTickEvent()
+{
+    progressValue++;
+
+    if (progressValue > 100)
+    {
+        progressValue = 0;
+    }
+
+    circleProgress1.setValue(progressValue);
+    circleProgress1.invalidate();
 }
 
 void Screen2View::function_slider_changed(int value)
