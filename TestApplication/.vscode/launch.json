@@ -8,7 +8,7 @@
         {
             "type": "stlinkgdbtarget",
             "request": "launch",
-            "name": "STM32Cube: Launch ST-Link GDB Server",
+            "name": "STM32: Flash and Debug",
             "origin": "snippet",
             "cwd": "${workspaceFolder}",
             "preBuild": "${command:st-stm32-ide-debug-launch.build}",
@@ -24,6 +24,26 @@
                     "imageFileName": "${command:st-stm32-ide-debug-launch.get-projects-binary-from-context1}"
                 }
             ]
+        },
+        {
+            "type": "stlinkgdbtarget",
+            "request": "launch",
+            "name": "STM32: Attach Without Flashing",
+            "origin": "snippet",
+            "cwd": "${workspaceFolder}",
+
+            "serverReset": "None",
+
+            "imagesAndSymbols": [
+                {
+                    "symbolFileName": "${command:st-stm32-ide-debug-launch.get-projects-binary-from-context1}"
+                }
+            ],
+
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 10
+            }
         }
     ]
 }
