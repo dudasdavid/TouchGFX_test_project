@@ -264,7 +264,8 @@
                     "Height": 237,
                     "DataSeed": -657163775,
                     "NumberOfValues": 50,
-                    "MaxY": 100.0,
+                    "MaxY": 12.0,
+                    "MinY": -12.0,
                     "Precision": "0.01",
                     "LastIndex": 49,
                     "XAxisScale": 1.0,
@@ -293,7 +294,7 @@
                     },
                     "YAxisGrid": {
                       "Type": "GraphGrid",
-                      "Interval": 10.0,
+                      "Interval": 3.0,
                       "LineWidth": 1
                     },
                     "XAxisLabel": {
@@ -306,7 +307,7 @@
                     },
                     "YAxisLabel": {
                       "Type": "GraphLabel",
-                      "Interval": 10.0,
+                      "Interval": 3.0,
                       "DecimalSeparator": "Point",
                       "TextId": "__SingleUse_QKTE",
                       "TextRotation": "0",
@@ -322,7 +323,8 @@
                     "Height": 214,
                     "DataSeed": 341746238,
                     "NumberOfValues": 50,
-                    "MaxY": 100.0,
+                    "MaxY": 12.0,
+                    "MinY": -12.0,
                     "Precision": "0.01",
                     "LastIndex": 49,
                     "XAxisScale": 1.0,

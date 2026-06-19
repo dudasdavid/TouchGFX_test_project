@@ -66,21 +66,34 @@ void Screen2View::updateGraphValue(float value1, float value2)
 void Screen2View::updateSharedGraphRange()
 {
     constexpr int Y_MARGIN = 1;
+    constexpr float MIN_FULL_RANGE = 7.0f;
+    constexpr float MIN_HALF_RANGE = MIN_FULL_RANGE / 2;
 
     // Temporarily calculate the required range for each dataset
     dynamicGraph1.setGraphRangeYAuto(false, Y_MARGIN);
     dynamicGraph2.setGraphRangeYAuto(false, Y_MARGIN);
 
     // Find the range that contains both graphs
-    const int commonMin = std::min(
-        dynamicGraph1.getGraphRangeYMinAsInt(),
-        dynamicGraph2.getGraphRangeYMinAsInt()
+    float commonMin = std::min(
+        dynamicGraph1.getGraphRangeYMinAsFloat(),
+        dynamicGraph2.getGraphRangeYMinAsFloat()
     );
 
-    const int commonMax = std::max(
-        dynamicGraph1.getGraphRangeYMaxAsInt(),
-        dynamicGraph2.getGraphRangeYMaxAsInt()
+    float commonMax = std::max(
+        dynamicGraph1.getGraphRangeYMaxAsFloat(),
+        dynamicGraph2.getGraphRangeYMaxAsFloat()
     );
+
+    const float currentRange = commonMax - commonMin;
+
+    // Prevent the graph from zooming in to less than 6 units
+    if (currentRange < MIN_FULL_RANGE)
+    {
+        const float center = (commonMin + commonMax) * 0.5f;
+
+        commonMin = center - MIN_HALF_RANGE;
+        commonMax = center + MIN_HALF_RANGE;
+    }
 
     // Give both overlaid graphs exactly the same Y-axis scale
     dynamicGraph1.setGraphRangeY(commonMin, commonMax);
