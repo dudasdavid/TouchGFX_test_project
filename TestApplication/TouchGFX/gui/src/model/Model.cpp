@@ -8,6 +8,7 @@ extern "C"
     extern uint8_t slider_value; // Declare the variable to hold the value of the slider
     extern float gauge_value; // Declare the variable to hold the value of the gauge
     extern void toggle_led_touch_button(bool state); // Declare the function to toggle the LED when the touch button is pressed
+    extern uint16_t measured_value; // Declare the variable to hold the value of the graph
 }
 
 Model::Model() : modelListener(0)
@@ -26,6 +27,7 @@ void Model::tick()
         modelListener->updateBulbImage(false); // Update the bulb image to OFF state
     }
     modelListener->updateGaugeValue(gauge_value); // Update the gauge value
+    modelListener->updateGraphValue(measured_value); // Update the graph value
 }
 
 void Model::function_toggle_pressed(bool state)

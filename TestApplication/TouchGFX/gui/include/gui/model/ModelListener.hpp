@@ -3,6 +3,8 @@
 
 #include <gui/model/Model.hpp>
 
+#include <touchgfx/hal/Types.hpp>
+
 class ModelListener
 {
 public:
@@ -17,6 +19,7 @@ public:
 
     virtual void updateBulbImage(bool state) {} // virtual function to update the bulb image state
     virtual void updateGaugeValue(float value) {} // virtual function to update the gauge value
+    virtual void updateGraphValue(uint16_t value) {} // virtual function to update the graph value
 protected:
     Model* model;
 };

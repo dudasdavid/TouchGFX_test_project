@@ -29,6 +29,7 @@ public:
 
     virtual void slider_value_changed(int value); // override virtual function to handle slider value change event
     virtual void updateGaugeValue(float value) override; // override virtual function to update the gauge value
+    virtual void updateGraphValue(uint16_t value) override; // override virtual function to update the graph value
 
 private:
     Screen2Presenter();

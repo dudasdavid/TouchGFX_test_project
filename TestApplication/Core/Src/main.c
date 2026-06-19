@@ -105,6 +105,7 @@ uint8_t bulb_image_state = 0;
 uint8_t slider_value = 0;
 float gauge_value = 0.0f;
 bool toggle_button_state = false;
+uint16_t measured_value = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -1068,7 +1069,8 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(100);
+    measured_value++;
+    osDelay(1000);
   }
   /* USER CODE END 5 */
 }

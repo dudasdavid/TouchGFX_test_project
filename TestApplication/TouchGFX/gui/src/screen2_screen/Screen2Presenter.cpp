@@ -30,3 +30,10 @@ void Screen2Presenter::updateGaugeValue(float value)
     // You can add your custom code here to update the gauge based on the value variable.
     view.updateGaugeValue(value); // Call the view function to update the gauge value
 }
+
+void Screen2Presenter::updateGraphValue(uint16_t value)
+{
+    // This function is called to update the graph value.
+    // You can add your custom code here to update the graph based on the value variable.
+    view.updateGraphValue(value); // Call the view function to update the graph value
+}
